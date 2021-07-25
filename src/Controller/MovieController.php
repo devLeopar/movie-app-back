@@ -29,11 +29,6 @@ class MovieController extends ApiController
     public function create(Request $request, MovieRepository $movieRepository, EntityManagerInterface $em)
     {
 
-        //Require okta verification
-        // if (!$this->isAuthorized()) {
-        //     return $this->respondUnauthorized();
-        // }
-
         $request = $this->transformJsonBody($request);
 
         if (!$request) {
@@ -59,11 +54,6 @@ class MovieController extends ApiController
      */
     public function increaseCount($id, EntityManagerInterface $em, MovieRepository $movieRepository)
     {
-
-        //Require okta verification
-        // if (!$this->isAuthorized()) {
-        //     return $this->respondUnauthorized();
-        // }
 
         $movie = $movieRepository->find($id);
 
